@@ -40,6 +40,10 @@ public class ENHelper {
         }
     }
 
+    public String getGamePage(String gameId) throws IOException {
+        return request(String.format("gameengines/encounter/play/%s", gameId));
+    }
+
     public String request(String path) throws IOException {
         try {
             HttpResponse<String> resp = httpClient.send(HttpRequest.newBuilder()
